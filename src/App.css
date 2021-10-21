@@ -1,0 +1,100 @@
+body {
+  box-sizing: border-box;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navLink {
+  margin: 0 1em;
+  padding: .5em;
+  width: 5em;
+  text-align: center;
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+}
+
+.navLink:hover {
+  background-color: grey;
+  border: 1px solid black;
+}
+
+.navLink a {
+  text-decoration: none;
+  color: white;
+}
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+}
+
+input {
+  margin: .5em;
+  padding: 1em;
+  width: 20em;
+}
+
+.header {
+  font-size: 2em;
+  margin-bottom: .5em;
+}
+
+.authBtn {
+  padding: .3em 1em;
+  background-color: black;
+  color: white;
+  margin-top: 1em;
+}
+
+.authBtn:hover {
+  background-color: grey;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+}
+
+.logo img {
+  display: block;
+  height: 3em;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  height: 90vh;
+  text-align: center;
+}
+
+.sideNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  margin: 1em 0;
+  padding: 1em;
+}
+
+.main {
+  margin: 1em;
+  border: 1px solid black;
+}
+
+.profile {
+  border: 1px solid black;
+  width: 100%;
+  padding: .5em;
+}
