@@ -57,6 +57,7 @@ input {
 
 .authBtn:hover {
   background-color: grey;
+  cursor: pointer;
 }
 
 .logo {
@@ -82,7 +83,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   border: 1px solid black;
   margin: 1em 0;
   padding: 1em;
