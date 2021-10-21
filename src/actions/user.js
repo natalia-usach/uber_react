@@ -8,6 +8,7 @@ export const registration = async (email, password, role) => {
             password, 
             role
         });
+        localStorage.setItem('userName', email);
         alert(response.data.message);
     } catch(e) {
         alert(e.response.data.message);
@@ -22,7 +23,6 @@ export const login = (email, password) => {
                     email,
                     password
                 });
-                console.log(response)
                 dispatch(setUser(response.data.user));
                 localStorage.setItem('token', response.data.jwt_token);
                 localStorage.setItem('userName', email);
@@ -38,7 +38,6 @@ export const auth = () => {
             const response = await axios.get('http://localhost:8080/api/auth/auth', {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             });
-            console.log(response)
             dispatch(setUser(response.data.user));
             localStorage.setItem('token', response.data.jwt_token);
         } catch(e) {
@@ -52,7 +51,7 @@ export const sendNewPassword = async (email) => {
             const response = await axios.post('http://localhost:8080/api/auth/forgot_password', {
                 email
             });
-            alert(response.data.message);
+            return response.data.message;
         } catch(e) {
             alert(e.response.data.message);
         }
@@ -60,8 +59,10 @@ export const sendNewPassword = async (email) => {
 
 export const getProfileInfo = async () => {
     try {
-        const response = await axios.get('http://localhost:8080/api/users/me', {});
-        alert(response.data.message);
+        const response = await axios.get('http://localhost:8080/api/users/me', {
+            headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
+        });
+        return response.data.user;
     } catch(e) {
         alert(e.response.data.message);
     }
