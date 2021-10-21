@@ -1,6 +1,6 @@
 const ProfileInfo = (props) => {
     return (
-        <div className='profile' onClick={props.clickEvent}>
+        <div className='profile authBtn' onClick={props.getProfileInfo}>
             Profile
         </div>
     );
